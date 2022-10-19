@@ -10,6 +10,7 @@ export default NextAuth({
     }),
     // ...add more providers here
   ],
+  secret: 'MySecretKey', 
   pages: {
     signIn: "/auth/signin",
   },
