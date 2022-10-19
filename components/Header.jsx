@@ -85,7 +85,6 @@ export default function Header(props) {
                 <div className="flex items-center justify-end space-x-4">
                     <HomeIcon onClick={() => router.push('/')} className="navBtn"></HomeIcon>
                     <MenuIcon className='navBtnShow' onClick={toggleClass} ></MenuIcon>
-                    <PlusCircleIcon className={isActive ? 'navBtnShow' : 'navBtn'} onClick={() => setOpen(true)}></PlusCircleIcon>
 
                     {session ? (
                         <>
@@ -95,7 +94,7 @@ export default function Header(props) {
                                 <div className="absolute -top-1 -right-2 text-xs w-5 h-5 bg-red-500 rounded-full flex items-center justify-center animate-pulse text-white">7</div>
                             </div>
 
-                            <PlusCircleIcon onClick={() => setOpen(true)} className="navBtn"></PlusCircleIcon>
+                            <PlusCircleIcon onClick={() => setOpen(true)} className={isActive ? 'navBtnShow' : 'navBtn'}></PlusCircleIcon>
                             <UserGroupIcon className="navBtn"></UserGroupIcon>
                             <HeartIcon className="navBtn"></HeartIcon>
 
