@@ -11,9 +11,10 @@ import {
 import { HomeIcon } from '@heroicons/react/solid'
 
 import { useSession, signIn, signOut } from 'next-auth/react'
-import {useRouter} from 'next/router'
-import {useRecoilState} from 'recoil'
-import { modalState} from '../atoms/modalAtom'
+import { useRouter } from 'next/router'
+import { useRecoilState } from 'recoil'
+import { modalState } from '../atoms/modalAtom'
+import { useState } from "react"
 
 
 export default function Header(props) {
@@ -22,13 +23,19 @@ export default function Header(props) {
     const router = useRouter();
     const [open, setOpen] = useRecoilState(modalState);
 
+    const [isActive, setActive] = useState(false);
+
+    const toggleClass = () => {
+        setActive(!isActive);
+    };
+
     return (
         <div className="shadow-sm border-b bg-white sticky top-0 z-50">
 
             <div className="flex justify-between max-w-6xl mx-5 lg:mx-auto">
 
                 {/* left */}
-                <div onClick={() => router.push('/') } className="relative hidden lg:inline-grid h-24 w-24 cursor-pointer">
+                <div onClick={() => router.push('/')} className="relative hidden lg:inline-grid h-24 w-24 cursor-pointer">
                     <Image src='https://links.papareact.com/ocw'
 
                         layout="fill" objectFit="contain"
@@ -36,7 +43,7 @@ export default function Header(props) {
                     ></Image>
                 </div>
 
-                <div onClick={() => router.push('/') } className="relative w-10 lg:hidden flex-shrink-0 cursor-pointer">
+                <div onClick={() => router.push('/')} className="relative w-10 lg:hidden flex-shrink-0 cursor-pointer">
                     <Image src='https://links.papareact.com/jjm'
 
                         layout="fill" objectFit="contain"
@@ -76,8 +83,9 @@ export default function Header(props) {
 
 
                 <div className="flex items-center justify-end space-x-4">
-                    <HomeIcon onClick={() => router.push('/') } className="navBtn"></HomeIcon>
-                    <MenuIcon className="h-6 md:hidden cursor-pointer"></MenuIcon>
+                    <HomeIcon onClick={() => router.push('/')} className="navBtn"></HomeIcon>
+                    <MenuIcon className='navBtnShow' onClick={toggleClass}></MenuIcon>
+                    <PlusCircleIcon className={isActive ? 'navBtnShow' : 'navBtn'}></PlusCircleIcon>
 
                     {session ? (
                         <>
@@ -87,7 +95,7 @@ export default function Header(props) {
                                 <div className="absolute -top-1 -right-2 text-xs w-5 h-5 bg-red-500 rounded-full flex items-center justify-center animate-pulse text-white">7</div>
                             </div>
 
-                            <PlusCircleIcon onClick={()=> setOpen(true)} className="navBtn"></PlusCircleIcon>
+                            <PlusCircleIcon onClick={() => setOpen(true)} className="navBtn"></PlusCircleIcon>
                             <UserGroupIcon className="navBtn"></UserGroupIcon>
                             <HeartIcon className="navBtn"></HeartIcon>
 

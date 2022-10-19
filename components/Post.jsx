@@ -26,6 +26,7 @@ export default function Post({ id, username, userImg, img, caption }) {
   const [comment, setComment] = useState([])
   const [likes, setLikes] = useState([])
   const [hasLiked, setHasLiked] = useState(false)
+  
 
   useEffect(
     () =>

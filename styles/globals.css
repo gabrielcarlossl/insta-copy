@@ -7,6 +7,10 @@
     @apply hidden h-6 md:inline-flex cursor-pointer hover:scale-125 transition-all duration-150 ease-out;
   }
 
+  .navBtnShow {
+    @apply h-6 md:inline-flex cursor-pointer hover:scale-125 transition-all duration-150 ease-out;
+  }
+
   .wrap {
     display: flex;
     width: 100%;
