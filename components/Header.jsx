@@ -84,8 +84,8 @@ export default function Header(props) {
 
                 <div className="flex items-center justify-end space-x-4">
                     <HomeIcon onClick={() => router.push('/')} className="navBtn"></HomeIcon>
-                    <MenuIcon className='navBtnShow' onClick={toggleClass}></MenuIcon>
-                    <PlusCircleIcon className={isActive ? 'navBtnShow' : 'navBtn'}></PlusCircleIcon>
+                    <MenuIcon className='navBtnShow' onClick={toggleClass} ></MenuIcon>
+                    <PlusCircleIcon className={isActive ? 'navBtnShow' : 'navBtn'} onClick={() => setOpen(true)}></PlusCircleIcon>
 
                     {session ? (
                         <>
