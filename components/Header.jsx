@@ -53,7 +53,7 @@ export default function Header(props) {
 
                 {/* middle search input */}
 
-                <div className={isActive ? 'w-40' : 'max-w-xs'} onClick={toggleClass}>
+                <div className={isActive ? 'w-36' : 'max-w-xs'} onClick={toggleClass}>
 
                     <div className="relative mt-1 p-3 rounded-md ">
                         <div className="
