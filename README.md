@@ -16,4 +16,4 @@
 
 ``` npm install```
 ### To start the project use:
-``` npm run```
+``` npm run start```
