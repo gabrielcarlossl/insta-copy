@@ -160,9 +160,9 @@ export default function Modal() {
                       sm:text-sm 
                       disabled:bg-gray-300 disabled:cursor-not-allowed 
                       hover:disabled:bg-gray-300'
-                      onClick={uploadPost}
-                      >
-                    {loading ? 'Enviando...':'Enviar Post'}
+                    onClick={uploadPost}
+                  >
+                    {loading ? 'Enviando...' : 'Enviar Post'}
                   </button>
                 </div>
 
